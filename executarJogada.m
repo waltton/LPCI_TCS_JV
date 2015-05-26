@@ -1,8 +1,11 @@
 function [ h ] = executarJogada( handles, linha, coluna )
 
-handles.posicoes(linha, coluna) = handles.jogadorAtual;
-
-atualizarGUI(handles);
+if jogadaEhPermitida(handles, linha, coluna)
+    handles.posicoes(linha, coluna) = handles.jogadorAtual;
+    atualizarGUI(handles);
+else
+    disp('jogada não permitida...')
+end
 
 h = handles;
 
