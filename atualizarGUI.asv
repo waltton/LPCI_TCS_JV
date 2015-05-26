@@ -1,0 +1,5 @@
+function [] = atualizarGUI( handles )
+
+
+end
+
