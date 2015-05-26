@@ -22,7 +22,6 @@ handles.output = hObject;
 
 guidata(hObject, handles);
 
-
 function varargout = gui_OutputFcn(hObject, eventdata, handles) 
 varargout{1} = handles.output;
 
