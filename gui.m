@@ -20,9 +20,6 @@ end
 function gui_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 
-handles.posicoes = zeros(3, 3);
-handles.jogadorAtual = 1;
-
 guidata(hObject, handles);
 
 
@@ -56,6 +53,8 @@ guidata(hObject, executarJogada(handles, 3, 2));
 function pushbutton10_Callback(hObject, eventdata, handles)
 guidata(hObject, executarJogada(handles, 3, 3));
 
-
-function figure1_CreateFcn(hObject, eventdata, handles)
-guidata(hObject, executarJogada(handles, 3, 3));
+function pushbutton11_Callback(hObject, eventdata, handles)
+handles = iniciarJogo(handles);
+guidata(hObject, handles);
+atualizarGUI(handles);
+guidata(hObject, handles);
