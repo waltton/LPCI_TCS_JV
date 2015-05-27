@@ -1,4 +1,4 @@
-function [ jogadorAtual ] = defineProximoJogador( jogador )
+function [ jogadorAtual ] = proximoJogador( jogador )
 
 jogadorAtual = jogador + 1;
 
