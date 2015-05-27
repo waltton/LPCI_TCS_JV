@@ -2,9 +2,9 @@ function [ h ] = executarJogada( handles, linha, coluna )
 
 if jogadaEhPermitida(handles, linha, coluna)
     handles.posicoes(linha, coluna) = handles.jogadorAtual;
-    verificaSituacaoDoJogo(handles);
+    handles.jogoAtivo = verificaSituacaoDoJogo(handles);
     atualizarGUI(handles);
-    handles.jogadorAtual = defineProximoJogador(handles.jogadorAtual);
+    handles.jogadorAtual = proximoJogador(handles.jogadorAtual);
 else
     disp('jogada não permitida...');
 end
