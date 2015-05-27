@@ -16,7 +16,6 @@ else
     gui_mainfcn(gui_State, varargin{:});
 end
 
-
 function gui_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.output = hObject;
 
@@ -57,3 +56,18 @@ handles = iniciarJogo(handles);
 guidata(hObject, handles);
 atualizarGUI(handles);
 guidata(hObject, handles);
+
+function figure1_CreateFcn(hObject, eventdata, handles)
+handles.jogoAtivo = 0;
+guidata(hObject, handles);
+
+function figure1_KeyPressFcn(hObject, eventdata, handles)
+if isempty(str2num(eventdata.Character))
+    if lower(eventdata.Character) == 'n'
+        pushbutton11_Callback(hObject, eventdata, handles)
+    end
+else    
+    guidata(hObject, executarJogada(handles, fix((str2num(eventdata.Character) - 1) / 3) + 1, mod(str2num(eventdata.Character) - 1, 3) + 1));
+end
+function pushbutton11_KeyPressFcn(hObject, eventdata, handles)
+figure1_KeyPressFcn(hObject, eventdata, handles)

@@ -1,6 +1,6 @@
-function [ ] = verificaSituacaoDoJogo( posicoes )
+function [ ] = verificaSituacaoDoJogo( handles )
 
-p = posicoes;
+p = handles.posicoes;
 vencedor = 0;
 %horizontais
 if ((p(1, 1) ~= 0) && p(1, 1) == p(1, 2) &&  p(1, 1) == p(1, 3))
@@ -31,7 +31,8 @@ if ((p(1, 3) ~= 0) && p(1, 3) == p(2, 2) &&  p(1, 3) == p(3, 1))
 end
 
 if vencedor ~= 0 
-    fprintf('O vencedor é : %d', vencedor)
+    handles.jogoAtivo = 0;
+    fprintf('O vencedor é : %d', vencedor);
 end
 
 end
