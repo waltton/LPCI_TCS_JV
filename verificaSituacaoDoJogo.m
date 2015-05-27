@@ -1,10 +1,17 @@
-function [ ] = verificaSituacaoDoJogo( handles )
+function [ jogoAtivo ] = verificaSituacaoDoJogo( handles )
 
-handles.vencedor = vencedor(handles.posicoes);
+jogoAtivo = handles.jogoAtivo;
 
-if vencedor ~= 0 
-    handles.jogoAtivo = 0;
-    fprintf('O vencedor é : %d', vencedor);
+v = vencedor(handles.posicoes);
+
+if v ~= 0 
+    jogoAtivo = 0;
+    fprintf('O vencedor é : %d', v);
+else
+    if deuVelha(handles.posicoes, proximoJogador(handles.jogadorAtual))
+        jogoAtivo = 0;
+        fprintf('velha');
+    end
 end
 
 end
