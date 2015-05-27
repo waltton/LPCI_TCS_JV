@@ -6,11 +6,11 @@ v = vencedor(handles.posicoes);
 
 if v ~= 0 
     jogoAtivo = 0;
-    fprintf('O vencedor é : %d', v);
+    set(handles.text2, 'String', sprintf('O vencedor é o jogador %d', v));
 else
     if deuVelha(handles.posicoes, proximoJogador(handles.jogadorAtual))
         jogoAtivo = 0;
-        fprintf('velha');
+        set(handles.text2, 'String','Deu velha...');
     end
 end
 
