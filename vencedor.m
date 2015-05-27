@@ -1,4 +1,4 @@
-function [ jogador ] = vencedor( posicoes )
+function [ jogador ] = vencedor( p )
 
 jogador = 0;
 
