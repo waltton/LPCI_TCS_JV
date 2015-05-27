@@ -69,5 +69,6 @@ if isempty(str2num(eventdata.Character))
 else    
     guidata(hObject, executarJogada(handles, fix((str2num(eventdata.Character) - 1) / 3) + 1, mod(str2num(eventdata.Character) - 1, 3) + 1));
 end
+
 function pushbutton11_KeyPressFcn(hObject, eventdata, handles)
 figure1_KeyPressFcn(hObject, eventdata, handles)
